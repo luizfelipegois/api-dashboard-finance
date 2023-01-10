@@ -12,9 +12,9 @@ const connectUser = async (req, res) => {
     const { _id } = user;
     const token = jwt.sign({ id: _id }, secret, { expiresIn: '1h' });
 
-    return res.status(200).json({ token, error: false, message: 'Successful authentication' });
+    return res.status(200).json({ token, error: false, message: 'Autenticação bem-sucedida' });
   } catch (error) {
-    return res.status(500).json({ message: 'Server error. Try again later', error: true, errorMessage: error });
+    return res.status(500).json({ message: 'Erro de servidor. Tente mais tarde', error: true, errorMessage: error });
   }
 };
 
